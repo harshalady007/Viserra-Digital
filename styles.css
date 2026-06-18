@@ -259,7 +259,19 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.0
 }
 .ad-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8a92; font-weight: 600; }
 .ad-card h5 { font-family: var(--display); font-weight: 600; font-size: 0.96rem; line-height: 1.15; margin: 6px 0 10px; }
-.ad-pill { display: inline-block; background: var(--ink); color: var(--lime); font-size: 0.68rem; font-weight: 600; padding: 6px 12px; border-radius: var(--r-pill); }
+.ad-pill {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--lime);
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+}
+.ad-pill:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
 .metric-chip {
   position: absolute; top: -22px; right: -18px;
   background: var(--ink); border: 1px solid var(--lime);
@@ -291,13 +303,19 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.0
 .grid-2 { grid-template-columns: 1fr; }
 .grid-3 { grid-template-columns: 1fr; }
 .grid-4 { grid-template-columns: 1fr; }
+.services-grid { grid-template-columns: 1fr; }
 @media (min-width: 660px) {
   .grid-2 { grid-template-columns: repeat(2,1fr); }
   .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .services-grid { grid-template-columns: repeat(2,1fr); }
 }
 @media (min-width: 1000px) {
   .grid-3 { grid-template-columns: repeat(3,1fr); }
   .grid-4 { grid-template-columns: repeat(4,1fr); }
+  .services-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (min-width: 1220px) {
+  .services-grid { grid-template-columns: repeat(5,1fr); }
 }
 
 .card {
@@ -683,6 +701,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.0
 .reveal[data-d="1"] { transition-delay: 60ms; }
 .reveal[data-d="2"] { transition-delay: 120ms; }
 .reveal[data-d="3"] { transition-delay: 180ms; }
+.reveal[data-d="4"] { transition-delay: 240ms; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
